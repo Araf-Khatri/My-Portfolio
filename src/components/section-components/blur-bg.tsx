@@ -7,7 +7,7 @@ interface BlurryBg {
   bottom?: String;
 }
 
-const BlurryBackground: FC<BlurryBg> = ({
+const SectionBlurBg: FC<BlurryBg> = ({
   top = "",
   left = "",
   right = "",
@@ -20,4 +20,4 @@ const BlurryBackground: FC<BlurryBg> = ({
   );
 };
 
-export default BlurryBackground;
+export default SectionBlurBg;

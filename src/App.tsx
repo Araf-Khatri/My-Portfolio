@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import Navbar from "./components/navbar";
-import ExperienceSection from "./pages/experiences";
+import ExperienceSection from "./pages/experience-section";
 
 import Introduction from "./pages/introduction";
+import ProjectsSection from "./pages/projects-section";
 
-function App() {
+const App: FC = () => {
   const [theme, setTheme] = useState<String>("LIGHT");
 
   const changeThemeHandler = () => {
@@ -27,10 +28,11 @@ function App() {
       <div className="portfolio-main">
         <Introduction />
         <ExperienceSection theme={theme} />
+        <ProjectsSection theme={theme} />
         <div className="h-screen"></div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

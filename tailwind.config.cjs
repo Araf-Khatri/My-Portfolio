@@ -3,19 +3,24 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-
       spacing: {
         4.5: "1.125rem",
       },
 
       animation: {
         active: "active 1s linear infinite",
+        projectActive: "sideBounce 350ms linear 1",
       },
       keyframes: {
         active: {
           "0%": { transform: "scale(1)" },
           "80%": { transform: "scale(1.5)", opacity: 1 },
           "100%": { transform: "scale(1.6)", opacity: 0 },
+        },
+        sideBounce: {
+          "0%": { transform: "translateX(0px)" },
+          "50%": { transform: "translateX(5px)" },
+          "100%": { transform: "translateX(0px)" },
         },
       },
 

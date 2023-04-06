@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react";
-import Section from "./section";
+import Section from "./section-components/section";
 import { TbSunFilled, TbMoonFilled } from "react-icons/tb";
 
 import Logo from "./../assets/nav-logo.png";

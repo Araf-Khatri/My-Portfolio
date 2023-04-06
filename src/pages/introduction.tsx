@@ -1,14 +1,14 @@
 import { FC } from "react";
 
-import Section from "../components/section";
-import BlurryBackground from "./blurry-background";
+import Section from "../components/section-components/section";
 import profilePhoto from "./../assets/profile.jpg";
-import TechStack from "../components/tech-stack/tech-stack";
+import TechStack from "../components/tech-stack";
+import SectionBlurBg from "../components/section-components/blur-bg";
 
 const Introduction: FC = () => {
   return (
     <div className="relative" id="home">
-      <BlurryBackground top={"top-[20rem]"} left={"left-[15%]"} />
+      <SectionBlurBg top={"top-[20rem]"} left={"left-[15%]"} />
 
       <Section classname={"pt-24 pb-16 relative"}>
         <div className="flex justify-between gap-8 items-center">
@@ -25,21 +25,24 @@ const Introduction: FC = () => {
 
             <TechStack />
           </div>
-          <div
-            className={`relative z-10 w-[38rem] h-96 p-3 bg-overflow-hidden 
+          <div>
+            {/* relative z-10 w-[38rem] h-96 p-3 bg-overflow-hidden  */}
+            <div
+              className={`relative z-10 aspect-video max-w-4xl min-w-[35rem]  p-3 bg-overflow-hidden 
 
             before:content-[''] before:absolute before:top-1 before:left-1 before:h-10 before:w-16 before:bg-secondary-600 before:z-[-1]
 
             after:content-[''] after:absolute after:bottom-1 after:right-1 after:h-10 after:w-16 after:bg-secondary-600 after:z-[-1]
             
             `}
-          >
-            <img
-              src={profilePhoto}
-              className={`object-cover h-full 
+            >
+              <img
+                src={profilePhoto}
+                className={`object-cover
             shadow-2xl shadow-secondary-500-25
             `}
-            />
+              />
+            </div>
           </div>
         </div>
       </Section>
