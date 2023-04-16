@@ -1,4 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
+const backfaceVisibility = plugin(function ({ addUtilities }) {
+  addUtilities({
+    ".backface-hidden": {
+      "backface-visibility": "hidden",
+    },
+    ".rotate-y-180": {
+      "transform": "rotateY(180deg)"
+    },
+    ".preserve-3d": {
+      "transform-style": "preserve-3d"
+    },
+    ".perspective-800": {
+      "perspective": "150rem"
+    }
+  });
+});
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -54,5 +74,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [backfaceVisibility],
 };

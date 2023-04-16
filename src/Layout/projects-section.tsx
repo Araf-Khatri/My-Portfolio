@@ -1,11 +1,11 @@
 import { FC, MouseEvent, SyntheticEvent, useState } from "react";
 
-import projectsData from "../data/projects.ts";
-import Section from "../components/section-components/section";
-import SectionHeading from "../components/section-components/heading";
-import SectionBlurBg from "../components/section-components/blur-bg";
-import Project from "../components/projects-section/project";
-import ProjectPreview from "../components/projects-section/preview.tsx";
+import projectsData from "../Data/projects.ts";
+import Section from "../Components/section-components/section.tsx";
+import SectionHeading from "../Components/section-components/heading.tsx";
+import SectionBlurBg from "../Components/section-components/blur-bg.tsx";
+import Project from "../Components/projects-section/project.tsx";
+import ProjectPreview from "../Components/projects-section/preview.tsx";
 
 interface ProjectsSectionProps {
   theme: String;
@@ -24,7 +24,11 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
     idx: 0,
   });
 
+  const scrollToPreview: HTMLAnchorElement = document.createElement("a");
+  scrollToPreview.href = "#projects";
+
   const onClickHandler = (idx: number) => () => {
+    scrollToPreview.click();
     setActiveProject({ clickEvent: true, idx });
   };
 
@@ -34,7 +38,7 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
         <SectionHeading heading={"PROJECTS"} />
         <div className="relative">
           <SectionBlurBg top={"top-[20rem]"} left={"left-[15%]"} />
-          <div className="ml-[1%] grid grid-cols-2 justify-between">
+          <div className="ml-[1%] grid gap-14 grid-cols-2 justify-between items-center">
             <div className="flex flex-col gap-2">
               {projectsData.map(({ id, projectName }, idx) => (
                 <Project
@@ -48,9 +52,10 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
               ))}
             </div>
 
-            <div>
-              <ProjectPreview projectData={projectsData[activeProject.idx]} />
-            </div>
+            <ProjectPreview
+              theme={theme}
+              projectData={projectsData[activeProject.idx]}
+            />
           </div>
         </div>
       </Section>

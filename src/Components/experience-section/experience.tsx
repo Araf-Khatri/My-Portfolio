@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import ExperienceDescription from "./description";
 
 interface DataObj {
@@ -22,7 +22,7 @@ const Experience: FC<ExperienceProps> = ({ theme, data, end, idx }) => {
     <div className="flex flex-col cursor-default">
       <div className="flex gap-4 items-center">
         <div
-          className={`relative z-auto h-5 w-5 rounded-full ${
+          className={`relative z-auto h-5 w-5 flex-shrink-0 rounded-full ${
             theme === "LIGHT" ? "bg-secondary-800" : "bg-primary-350"
           } ${
             data.active &&
@@ -53,7 +53,7 @@ const Experience: FC<ExperienceProps> = ({ theme, data, end, idx }) => {
       >
         {end && (
           <div
-            className={`absolute h-2 w-2 rounded-full opacity-50 ${
+            className={`absolute h-2 w-2 flex-shrink-0 rounded-full opacity-50 ${
               theme === "LIGHT" ? "bg-secondary-800" : "bg-primary-350"
             } left-0 bottom-0 -translate-x-[79%] translate-y-3`}
           ></div>

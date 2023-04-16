@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import Section from "../components/section-components/section";
-import profilePhoto from "./../assets/profile.jpg";
-import TechStack from "../components/tech-stack";
-import SectionBlurBg from "../components/section-components/blur-bg";
+import Section from "../Components/section-components/section";
+import profilePhoto from "./../Assets/profile.jpg";
+import TechStack from "../Components/tech-stack";
+import SectionBlurBg from "../Components/section-components/blur-bg";
 
 const Introduction: FC = () => {
   return (

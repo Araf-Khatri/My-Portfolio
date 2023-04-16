@@ -1,9 +1,10 @@
 import { FC, useState } from "react";
-import Navbar from "./components/navbar";
-import ExperienceSection from "./pages/experience-section";
+import Navbar from "./Components/navbar";
+import ExperienceSection from "./Layout/experience-section";
 
-import Introduction from "./pages/introduction";
-import ProjectsSection from "./pages/projects-section";
+import Introduction from "./Layout/introduction";
+import ProjectsSection from "./Layout/projects-section";
+import AchievementAndCertificationSection from "./Layout/achievements-and-certification-section";
 
 const App: FC = () => {
   const [theme, setTheme] = useState<String>("LIGHT");
@@ -29,6 +30,7 @@ const App: FC = () => {
         <Introduction />
         <ExperienceSection theme={theme} />
         <ProjectsSection theme={theme} />
+        <AchievementAndCertificationSection />
         <div className="h-screen"></div>
       </div>
     </div>

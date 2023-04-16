@@ -1,6 +1,8 @@
+import stopwatchVid from "./../Videos/stopwatch-preview.mp4";
+
 interface Experience {
   id: number;
-  active: boolean;
+  active: boolean; // if job active then set it to true, else false
   title: string;
   companyName: string;
   websiteLink: string;

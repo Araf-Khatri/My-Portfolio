@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import Section from "./section-components/section";
 import { TbSunFilled, TbMoonFilled } from "react-icons/tb";
 
-import Logo from "./../assets/nav-logo.png";
+import Logo from "./../Assets/nav-logo.png";
 
 interface Link {
   linkName: String;
@@ -33,10 +33,6 @@ const Navbar: FC<NavProps> = ({ theme, setTheme }: NavProps) => {
     {
       linkName: "Achievements",
       navigateTo: "achievements",
-    },
-    {
-      linkName: "Education",
-      navigateTo: "education",
     },
   ];
 

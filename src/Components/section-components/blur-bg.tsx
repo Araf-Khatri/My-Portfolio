@@ -5,6 +5,7 @@ interface BlurryBg {
   left?: String;
   right?: String;
   bottom?: String;
+  color?: String;
 }
 
 const SectionBlurBg: FC<BlurryBg> = ({
@@ -12,10 +13,15 @@ const SectionBlurBg: FC<BlurryBg> = ({
   left = "",
   right = "",
   bottom = "",
+  color = "",
 }: BlurryBg) => {
   return (
     <div className={`${top} ${left} ${right} ${bottom} absolute blur-[150px]`}>
-      <div className="h-40 w-36 bg-gradient-to-tr from-blurr-100 to-blurr-500"></div>
+      <div
+        className={`h-40 w-36 ${
+          color === "" ? "bg-gradient-to-tr from-blurr-100 to-blurr-500" : color
+        }`}
+      ></div>
     </div>
   );
 };
