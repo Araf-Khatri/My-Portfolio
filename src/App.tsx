@@ -1,38 +1,56 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Navbar from "./Components/navbar";
 import ExperienceSection from "./Layout/experience-section";
 
 import Introduction from "./Layout/introduction";
 import ProjectsSection from "./Layout/projects-section";
 import AchievementAndCertificationSection from "./Layout/achievements-and-certification-section";
+import View from "./View";
+import ConnectSection from "./Layout/connect-section";
+import Section from "./Components/section-components/section";
 
 const App: FC = () => {
-  const [theme, setTheme] = useState<String>("LIGHT");
+  const [theme, setTheme] = useState<string>("light");
 
   const changeThemeHandler = () => {
-    if (theme === "LIGHT") {
-      setTheme("DARK");
+    const localTheme: string | null = localStorage.getItem("theme");
+    if (localTheme === "light") {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    const localTheme: string | null = localStorage.getItem("theme");
+    if (!localTheme) {
+      localStorage.setItem("theme", "light");
       return;
     }
-    setTheme("LIGHT");
-  };
+    setTheme(localTheme);
+  }, []);
 
   return (
     <div
-      className={`relative ${
-        theme === "LIGHT"
+      className={`${theme} relative ${
+        theme === "light"
           ? "bg-primary-100 text-primary-900"
           : "bg-primary-1000 text-primary-100"
-      } transition-all`}
+      } scrollbar-thumb-slate-800
+      transition-all`}
     >
-      <Navbar theme={theme} setTheme={changeThemeHandler} />
-      <div className="portfolio-main">
+      <Navbar changeThemeHandler={changeThemeHandler} />
+      <View>
         <Introduction />
-        <ExperienceSection theme={theme} />
-        <ProjectsSection theme={theme} />
+        <ExperienceSection />
+        <ProjectsSection />
         <AchievementAndCertificationSection />
-        <div className="h-screen"></div>
-      </div>
+        <ConnectSection />
+        <div className="w-screen h-1 bg-secondary-600 dark:bg-secondary-1000"></div>
+        {/* <div className="h-screen"></div> */}
+      </View>
     </div>
   );
 };

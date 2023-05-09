@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+
+
 const plugin = require("tailwindcss/plugin");
 
 const backfaceVisibility = plugin(function ({ addUtilities }) {
@@ -8,23 +10,32 @@ const backfaceVisibility = plugin(function ({ addUtilities }) {
       "backface-visibility": "hidden",
     },
     ".rotate-y-180": {
-      "transform": "rotateY(180deg)"
+      transform: "rotateY(180deg)",
     },
     ".preserve-3d": {
-      "transform-style": "preserve-3d"
+      "transform-style": "preserve-3d",
     },
     ".perspective-800": {
-      "perspective": "150rem"
-    }
+      perspective: "150rem",
+    },
   });
 });
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       spacing: {
         4.5: "1.125rem",
+      },
+      boxShadow: {
+        'form': '0 1rem 50px -15px',
+        
+      },
+
+      gridTemplateColumns: {
+        '1/3': '2fr 5fr',
       },
 
       animation: {
@@ -52,6 +63,7 @@ module.exports = {
           300: "#c5e6f7",
           350: "#b1def5",
           500: "#263c47",
+          800: "#003443",
           900: "#0e2633",
           1000: "#071319",
         },
@@ -69,7 +81,10 @@ module.exports = {
           "500-25": "#44c0fe30",
           600: "#3dade5",
           700: "#369acb",
+          "700-25": "#369acb35",
           800: "#318ab7",
+          900: "#276e92",
+          1000: "#226180",
         },
       },
     },

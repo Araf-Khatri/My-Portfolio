@@ -1,24 +1,18 @@
 import { FC, MouseEvent, SyntheticEvent, useState } from "react";
-
 import projectsData from "../Data/projects.ts";
+
 import Section from "../Components/section-components/section.tsx";
 import SectionHeading from "../Components/section-components/heading.tsx";
 import SectionBlurBg from "../Components/section-components/blur-bg.tsx";
 import Project from "../Components/projects-section/project.tsx";
 import ProjectPreview from "../Components/projects-section/preview.tsx";
 
-interface ProjectsSectionProps {
-  theme: String;
-}
-
 interface ActiveProjectState {
   clickEvent: boolean;
   idx: number;
 }
 
-const ProjectsSection: FC<ProjectsSectionProps> = ({
-  theme,
-}: ProjectsSectionProps) => {
+const ProjectsSection: FC = () => {
   const [activeProject, setActiveProject] = useState<ActiveProjectState>({
     clickEvent: false,
     idx: 0,
@@ -33,7 +27,7 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
   };
 
   return (
-    <div id="projects">
+    <div id="projects" className="relative z-[1]">
       <Section classname={"py-16 flex flex-col gap-3"}>
         <SectionHeading heading={"PROJECTS"} />
         <div className="relative">
@@ -43,7 +37,6 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
               {projectsData.map(({ id, projectName }, idx) => (
                 <Project
                   key={id}
-                  theme={theme}
                   idx={idx}
                   projectName={projectName}
                   activeClicked={activeProject.idx === idx}
@@ -53,7 +46,6 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({
             </div>
 
             <ProjectPreview
-              theme={theme}
               projectData={projectsData[activeProject.idx]}
             />
           </div>

@@ -16,7 +16,7 @@ const SectionBlurBg: FC<BlurryBg> = ({
   color = "",
 }: BlurryBg) => {
   return (
-    <div className={`${top} ${left} ${right} ${bottom} absolute blur-[150px]`}>
+    <div className={`${top} ${left} ${right} ${bottom} absolute blur-[150px] -z-[1]`}>
       <div
         className={`h-40 w-36 ${
           color === "" ? "bg-gradient-to-tr from-blurr-100 to-blurr-500" : color

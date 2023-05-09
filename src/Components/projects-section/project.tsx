@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
 interface ProjectProps {
-  theme: String;
   idx: Number;
   projectName: String;
   activeClicked: boolean;
@@ -10,7 +9,6 @@ interface ProjectProps {
 }
 
 const Project: FC<ProjectProps> = ({
-  theme,
   idx,
   projectName,
   activeClicked,
@@ -26,9 +24,7 @@ const Project: FC<ProjectProps> = ({
       onClick={() => onclick()}
       className={`project relative ${
         idx === 0 ? "mt-1" : ""
-      } py-5 px-3 overflow-hidden rounded-sm cursor-pointer border-y-[1px] ${
-        theme === "LIGHT" ? "border-primary-200" : "border-secondary-200-25"
-      }`}
+      } py-5 px-3 overflow-hidden rounded-sm cursor-pointer border-y-[1px] border-primary-200 dark:border-secondary-200-25`}
     >
       <div className="bottom-0 left-0 absolute w-full h-[1px]">
         <div

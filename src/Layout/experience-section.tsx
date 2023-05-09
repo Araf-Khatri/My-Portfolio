@@ -15,7 +15,7 @@ interface ExperiencesObj {
   description: String[];
 }
 
-const ExperienceSection: FC<{ theme: String }> = ({ theme }) => {
+const ExperienceSection: FC = () => {
   return (
     <div className="relative z-[1]" id="experience">
       <Section classname={"py-16 flex flex-col gap-3"}>
@@ -26,7 +26,6 @@ const ExperienceSection: FC<{ theme: String }> = ({ theme }) => {
             {experienceData.map((data, idx) => (
               <Experience
                 key={data.id}
-                theme={theme}
                 data={data}
                 end={experienceData.length - 1 === idx}
                 idx={idx}

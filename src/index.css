@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: #0092be;
+  background-color: #66bed8;
+  color: #071319;
 }
 
 html {
@@ -11,3 +12,38 @@ html {
   scroll-behavior: smooth;
   /* background:#9ed6f22c */
 }
+body {
+  position: relative;
+  /* cursor: none; */
+}
+
+/* body::-webkit-scrollbar {
+  display: none;
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #F1FAFF;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  
+} */
+
+/* .custom-cursor {
+  position: fixed;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100%;
+  background-color: #369acb90;
+  transform: translate(-50%, -50%);
+
+  z-index: 99999;
+  pointer-events: none;
+} */

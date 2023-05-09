@@ -9,5 +9,20 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- <script>
+      const body = document.querySelector("body");
+      const cursor = document.createElement("div");
+      cursor.classList = "custom-cursor";
+      body.prepend(cursor);
+
+      if (navigator.userAgentData.mobile === true) {
+        body.remove(cursor);
+      }
+
+      window.addEventListener("mousemove", (e) => {
+        cursor.style.top = `${e.clientY}px`;
+        cursor.style.left = `${e.clientX}px`;
+      });
+    </script> -->
   </body>
 </html>

@@ -6,6 +6,7 @@ import TechStack from "../Components/tech-stack";
 import SectionBlurBg from "../Components/section-components/blur-bg";
 
 const Introduction: FC = () => {
+  console.log('rerendered')
   return (
     <div className="relative" id="home">
       <SectionBlurBg top={"top-[20rem]"} left={"left-[15%]"} />
