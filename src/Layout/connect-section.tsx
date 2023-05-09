@@ -11,15 +11,15 @@ const ConnectSection: FC = () => {
   return (
     <div className="relative z-[1] overflow-hidden" id="connect">
       <Section classname={"py-16 flex flex-col gap-3"}>
-        <SectionHeading heading={"GET IN TOUCH"} />
-        <div className="relative top">
-          <SectionBlurBg top={"top-80"} left={"left-[40%]"} />
+        <div className="relative">
+          {/* <SectionBlurBg top={"top-full"} left={"left-[10%]"} /> */}
 
           <div className="grid grid-cols-1/3 gap-14">
             <div className="flex flex-col gap-3 ml-[0.5%] mt-8">
-              <p className="text-2xl font-semibold ml-[3%] text-primary-500 dark:text-secondary-200 ">
+              <SectionHeading heading={"GET IN TOUCH"} />
+              {/* <p className="text-xl font-semibold ml-[3%] text-primary-500 dark:text-secondary-200 ">
                 Let's Connect! :{")"}
-              </p>
+              </p> */}
               <div className="flex flex-col gap-2">
                 <a
                   target="_blank"
@@ -40,12 +40,28 @@ const ConnectSection: FC = () => {
               </div>
             </div>
             <div className="border border-primary-200 bg-primary-100 dark:border-primary-900 dark:bg-primary-1000 shadow-form shadow-secondary-500-25">
-              <p className="p-4 font-bold text-2xl text-center border-b border-primary-200 dark:border-primary-900">Contact Me!</p>
-              <form className="grid grid-cols-2 gap-6 p-6">
+              <p className="p-5 font-bold text-2xl text-center text-secondary-700 dark:text-secondary-800 border-b border-primary-200 dark:border-primary-900">
+                Contact Me!
+              </p>
+              <form className="grid grid-cols-2 gap-6 p-7">
                 <FormInput ref={usernameRef} label={"Your Name"} type="text" />
-                <FormInput ref={usernameRef} label={"How can I Connect?"} type="text" />
-                <FormInput classname="col-span-2" ref={usernameRef} label={"Subject"} type="text" />
-                <FormInput classname="col-span-2" ref={usernameRef} label={"Description"} type="text-area" />
+                <FormInput
+                  ref={usernameRef}
+                  label={"How can I Connect?"}
+                  type="text"
+                />
+                <FormInput
+                  classname="col-span-2"
+                  ref={usernameRef}
+                  label={"Subject"}
+                  type="text"
+                />
+                <FormInput
+                  classname="col-span-2"
+                  ref={usernameRef}
+                  label={"Description"}
+                  type="text-area"
+                />
               </form>
             </div>
           </div>

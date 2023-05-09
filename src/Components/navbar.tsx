@@ -63,7 +63,7 @@ const Navbar: FC<NavProps> = ({ changeThemeHandler }: NavProps) => {
             <div
               onClick={() => changeThemeHandler()}
               className={`grid place-items-center p-2 rounded-full
-                bg-primary-200 dark:bg-primary-900
+                bg-primary-200 dark:bg-primary-900 cursor-pointer
               `}
             >
               {localStorage.getItem("theme") === "light" ? (

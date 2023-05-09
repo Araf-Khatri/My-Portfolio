@@ -48,7 +48,7 @@ const App: FC = () => {
         <ProjectsSection />
         <AchievementAndCertificationSection />
         <ConnectSection />
-        <div className="w-screen h-1 bg-secondary-600 dark:bg-secondary-1000"></div>
+        <div className="w-screen h-1 bg-secondary-700 dark:bg-secondary-800"></div>
         {/* <div className="h-screen"></div> */}
       </View>
     </div>

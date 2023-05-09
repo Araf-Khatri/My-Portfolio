@@ -35,7 +35,7 @@ module.exports = {
       },
 
       gridTemplateColumns: {
-        '1/3': '2fr 5fr',
+        '1/3': '2fr 4fr',
       },
 
       animation: {
